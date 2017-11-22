@@ -2,6 +2,7 @@ set nocompatible
 filetype off
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
+colorscheme desert
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
@@ -23,11 +24,15 @@ au BufNewFile,BufRead *.py
     \ set textwidth=79|
     \ set expandtab|
     \ set autoindent|
-    \ set fileformat=unix|
-au BufNewFile,BufRead *.js, *.html, *.css
+    \ set fileformat=unix
+au BufNewFile,BufRead *.js,*.css,*.html
     \ set tabstop=2|
     \ set softtabstop=2|
     \ set shiftwidth=2|
+    \ set textwidth=79|
+    \ set expandtab|
+    \ set autoindent|
+    \ set fileformat=unix
 Plugin 'vim-scripts/indentpython.vim'
 highlight BadWhitespace ctermbg=red guibg=darkred
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
@@ -48,12 +53,6 @@ syntax on
 
 Plugin 'jnurmine/Zenburn'
 Plugin 'altercation/vim-colors-solarized'
-if has('gui_running')
-    set background=dark
-    colorscheme solarized
-else
-    colorscheme zenburn
-endif
 call togglebg#map("<F5>")
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
