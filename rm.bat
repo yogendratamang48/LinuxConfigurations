@@ -2,6 +2,6 @@
 IF "%1" == "" goto single
 IF NOT "%1" == "" goto folder
 :single
-dir
+echo "ERR! Filename not given"
 :folder
-dir %1 
+del %1 
