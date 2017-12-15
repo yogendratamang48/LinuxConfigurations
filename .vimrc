@@ -37,6 +37,7 @@ Plugin 'vim-scripts/indentpython.vim'
 highlight BadWhitespace ctermbg=red guibg=darkred
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 set encoding=utf-8
+set relativenumber
 "python with virtualenv support
 python3 << EOF
 import os
