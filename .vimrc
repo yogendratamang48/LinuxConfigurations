@@ -11,7 +11,7 @@ call vundle#begin()
  Plugin 'gmarik/Vundle.vim'
 
 " Add all your plugins here (note older versions of Vundle used Bundle
-" instead of Plugin)
+" instead of Plugin
 "
 "
 " All of your Plugins must be added before the following line
@@ -37,21 +37,25 @@ Plugin 'vim-scripts/indentpython.vim'
 highlight BadWhitespace ctermbg=red guibg=darkred
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 set encoding=utf-8
-set relativenumber
+set nu 
 "python with virtualenv support
-python3 << EOF
-import os
-import sys
-if 'VIRTUAL_ENV' in os.environ:
-    project_base_dir = os.environ['VIRTUAL_ENV']
-    activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-    execfile(activate_this, dict(__file__=activate_this))
-EOF
+"python3 << EOF
+"import os
+"import sys
+"if 'VIRTUAL_ENV' in os.environ:
+"    project_base_dir = os.environ['VIRTUAL_ENV']
+"    activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+"    execfile(activate_this, dict(__file__=activate_this))
+"EOF
 Plugin 'scrooloose/syntastic'
 Plugin 'nvie/vim-flake8'
+let g:syntastic_mode_map = { 'passive_filetypes': ['python'] }
 let python_hightlight_all=1
 syntax on
-
+"Enable folding
+set foldmethod=indent
+set foldlevel=99
+nnoremap <space> za
 Plugin 'jnurmine/Zenburn'
 Plugin 'altercation/vim-colors-solarized'
 call togglebg#map("<F5>")
