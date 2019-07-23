@@ -56,6 +56,7 @@ syntax on
 set foldmethod=indent
 set foldlevel=99
 nnoremap <space> za
+nnoremap <C-n> :NERDTree
 Plugin 'jnurmine/Zenburn'
 Plugin 'altercation/vim-colors-solarized'
 call togglebg#map("<F5>")
